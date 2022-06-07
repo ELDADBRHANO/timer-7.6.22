@@ -75,3 +75,31 @@
 //   },1000)
 // }
 // getTimer()
+
+
+// 6
+// var input_id=document.getElementById("input_id");
+// var stopper;
+// function build() {
+//   var minute = input_id.value -1
+//   var sec = 59;
+//   stopper=setInterval(function() {
+//     if(minute < 0){
+//       return timer.innerHTML= "time's up"
+//     }
+//     document.getElementById("timer").innerHTML = minute + " : " + sec;
+//     sec--;
+//     if (sec == 00) {
+//       sec = 59;
+//       minute --;
+//     }
+//   }, 1000);
+// }
+
+// function stopCount() {
+//   clearInterval(stopper)
+// } 
+
+
+// 7
+var input_id = document.getElementById("input_id");
