@@ -103,3 +103,12 @@
 
 // 7
 var input_id = document.getElementById("input_id");
+function printHowMuchTime() {
+  var today = new Date().getHours()+":"+ new Date().getMinutes();
+ console.log(today);
+  var hour = input_id.value;
+  var result = today ;
+  timer.innerText=result
+}
+var s = new Date()
+console.log(s);
