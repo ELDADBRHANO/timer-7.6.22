@@ -1,3 +1,5 @@
+// setInterval
+
 // 1
 // function printTimer() {
 //    setInterval(()=>{
@@ -94,40 +96,140 @@
 // }
 
 // 7
-var input_time = document.getElementById("input_time");
-var my_p = document.getElementById("timer");
+// var input_time = document.getElementById("input_time");
+// var my_p = document.getElementById("timer");
 
-var stopper;
-function printHowMuchTime() {
-  var dateObject = new Date();
-  var secondsFromDate = dateObject.getSeconds();
-  var secondsFromInput = parseInt(input_time.value.substr(6));
+// var stopper;
+// function printHowMuchTime() {
+//   var dateObject = new Date();
+//   var secondsFromDate = dateObject.getSeconds();
+//   var secondsFromInput = parseInt(input_time.value.substr(6));
 
-  var minuteFromDate = dateObject.getMinutes();
-  var minuteFromInput = parseInt(input_time.value.substr(3, 2));
+//   var minuteFromDate = dateObject.getMinutes();
+//   var minuteFromInput = parseInt(input_time.value.substr(3, 2));
 
-  var hoursFromDate = dateObject.getHours();
-  var hoursFromInput = parseInt(input_time.value.substr(0, 2));
+//   var hoursFromDate = dateObject.getHours();
+//   var hoursFromInput = parseInt(input_time.value.substr(0, 2));
 
-  stopper = setInterval(() => {
-    var seconds =secondsFromInput-secondsFromDate
+//   stopper = setInterval(() => {
+//     var seconds =secondsFromInput-secondsFromDate
     
    
-    if (seconds == -1) {
-      secondsFromDate = 59;
-      minuteFromDate++;
-      if (minuteFromDate == -1) {
-        minuteFromDate = 59;
-        hoursFromDate++;
-      }
-      if (hoursFromDate == -1) {
-        hoursFromDate = 23;
-      }
-    }
-    my_p.innerHTML = hoursFromDate + ":" + minuteFromDate + ":"+ seconds;
-    secondsFromDate--;
-    if(dateObject.getTime()==dateObject.setHours(hoursFromInput,minuteFromInput,secondsFromInput)){
-      setInterval(stopper);
-    }
-  }, 1000);
-}
+//     if (seconds == -1) {
+//       secondsFromDate = 59;
+//       minuteFromDate++;
+//       if (minuteFromDate == -1) {
+//         minuteFromDate = 59;
+//         hoursFromDate++;
+//       }
+//       if (hoursFromDate == -1) {
+//         hoursFromDate = 23;
+//       }
+//     }
+//     my_p.innerHTML = hoursFromDate + ":" + minuteFromDate + ":"+ seconds;
+//     secondsFromDate--;
+//     if(dateObject.getTime()==dateObject.setHours(hoursFromInput,minuteFromInput,secondsFromInput)){
+//       setInterval(stopper);
+//     }
+//   }, 1000);
+// }
+
+
+
+
+// +++setTimeOut:++++++
+
+
+
+
+// // 1
+// function printHowMuchTime() {
+//   setTimeout(()=>{
+//     h3_id.innerHTML="eldad"
+//   },7000)
+// }
+
+// setTimeout(()=>{
+//   h3_id.innerHTML="eldad"
+// },7000)
+
+
+
+
+// 2
+// function printHello() {
+//   setTimeout(()=>{
+//     h3_id.innerHTML="hello"
+//   },5000);
+//   h3_id2.innerHTML="bye"
+// }
+
+
+// 3
+// function printHourInDelay() {
+//   var date= new Date();
+//   var time = date.getHours();
+//   var mints = date.getMinutes();
+//   var hour = time + ":" + mints ;
+//   setTimeout(()=>{
+//     h3_id.innerHTML= hour
+//   },90000)
+// }
+// printHourInDelay()
+
+
+// 4
+// var stopP;
+// function printILuvTimers() {
+// stopP = setTimeout(()=>{
+//     h3_id.innerHTML="i luv timers"
+//   },10000);
+// }
+// printILuvTimers()
+
+
+// function stopPrintILuvTimers(){
+//   clearTimeout(stopP)
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// just checking
+// function printHowMuchTime() {
+//   setInterval(()=>{
+//     setTimeout(()=>{
+//       h3_id.innerHTML="eldad"
+//     },5000)
+//   },1000)
+// }
+
+// just checking
+// function checkPassword() {
+//   if(firstPassword.value == confirmPassword.value){
+//     alert("password are correct, welcome :)")
+//     return true;
+//   }
+//   alert("passwords are not the same, try again :(")
+//   return false;
+// }
