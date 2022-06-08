@@ -1,4 +1,3 @@
-
 // 1
 // function printTimer() {
 //    setInterval(()=>{
@@ -6,7 +5,6 @@
 //   },4000)
 // }
 // printTimer()
-
 
 // 2
 // function printCounter(params) {
@@ -16,8 +14,7 @@
 // }
 // printCounter()
 
-
- // 3
+// 3
 // var myP = document.createElement("p")
 // document.body.append(myP)
 // var sthop;
@@ -36,7 +33,6 @@
 //     clearInterval(sthop)
 //   }
 // }
-
 
 // 4
 // var btn= document.createElement("button");
@@ -65,8 +61,6 @@
 // }
 // stopPrint()
 
-
-
 // 5
 // function getTimer(){
 //  setInterval(()=>{
@@ -75,7 +69,6 @@
 //   },1000)
 // }
 // getTimer()
-
 
 // 6
 // var input_id=document.getElementById("input_id");
@@ -98,17 +91,43 @@
 
 // function stopCount() {
 //   clearInterval(stopper)
-// } 
-
+// }
 
 // 7
-var input_id = document.getElementById("input_id");
+var input_time = document.getElementById("input_time");
+var my_p = document.getElementById("timer");
+
+var stopper;
 function printHowMuchTime() {
-  var today = new Date().getHours()+":"+ new Date().getMinutes();
- console.log(today);
-  var hour = input_id.value;
-  var result = today ;
-  timer.innerText=result
+  var dateObject = new Date();
+  var secondsFromDate = dateObject.getSeconds();
+  var secondsFromInput = parseInt(input_time.value.substr(6));
+
+  var minuteFromDate = dateObject.getMinutes();
+  var minuteFromInput = parseInt(input_time.value.substr(3, 2));
+
+  var hoursFromDate = dateObject.getHours();
+  var hoursFromInput = parseInt(input_time.value.substr(0, 2));
+
+  stopper = setInterval(() => {
+    var seconds =secondsFromInput-secondsFromDate
+    
+   
+    if (seconds == -1) {
+      secondsFromDate = 59;
+      minuteFromDate++;
+      if (minuteFromDate == -1) {
+        minuteFromDate = 59;
+        hoursFromDate++;
+      }
+      if (hoursFromDate == -1) {
+        hoursFromDate = 23;
+      }
+    }
+    my_p.innerHTML = hoursFromDate + ":" + minuteFromDate + ":"+ seconds;
+    secondsFromDate--;
+    if(dateObject.getTime()==dateObject.setHours(hoursFromInput,minuteFromInput,secondsFromInput)){
+      setInterval(stopper);
+    }
+  }, 1000);
 }
-var s = new Date()
-console.log(s);
