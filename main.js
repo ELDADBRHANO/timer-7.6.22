@@ -183,7 +183,7 @@
 // function printILuvTimers() {
 // stopP = setTimeout(()=>{
 //     h3_id.innerHTML="i luv timers"
-//   },10000);
+//   },90000);
 // }
 // printILuvTimers()
 
